@@ -1,4 +1,5 @@
 ﻿using System;
+using CSharp_Delegates_master;
 
 namespace CSharp_Delegates
 {
@@ -6,7 +7,12 @@ namespace CSharp_Delegates
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MathService m = new MathService();
+
+            var result = m.MathDelegate(5,8);
+
+            Console.WriteLine("Result: " + result);
+
         }
     }
 }
