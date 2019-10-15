@@ -7,10 +7,13 @@ namespace CSharp_Delegates
     {
         static void Main(string[] args)
         {
-            MathService m = new MathService();
+            MathService service = new MathService();
+            service.OutboundDelegate += OnOutboundDelegate;
+            var result = service.MathDelegate(5,8);
+        }
 
-            var result = m.MathDelegate(5,8);
-
+        static void OnOutboundDelegate(double result)
+        {
             Console.WriteLine("Result: " + result);
 
         }
